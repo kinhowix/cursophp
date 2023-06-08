@@ -27,13 +27,13 @@
         $real = $_REQUEST["din"] ?? 0;
         $dolar = $real / $cotacao;
                
+    
+       // $padrao = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
 
-        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+        echo  "<p>Seus R$".number_format($real ,2). " equivalem
+        a <strong> $".number_format($dolar ,2). " </strong></p>";
 
-        echo  "<p>Seus  ".numfmt_format_currency($padrao , $real , "BRL"). " equivalem
-        a <strong>".numfmt_format_currency($padrao , $dolar , "USD")."</strong></p>";
-
-        echo "<p> Cotação atualizada 1 dolar custa  : <strong>R$".number_format($cotacao ,2). "</strong></p></br>";     
+        echo "<p> Cotação atualizada 1 dolar custa  : <strong>R$".number_format($cotacao ,3). "</strong></p></br>";     
         
         
         
